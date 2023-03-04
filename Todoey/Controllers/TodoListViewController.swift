@@ -8,7 +8,7 @@
 
 import UIKit
 import RealmSwift
-import Chameleon
+import ChameleonSwift
 
 class TodoListViewController: SwipeTableViewController {
     

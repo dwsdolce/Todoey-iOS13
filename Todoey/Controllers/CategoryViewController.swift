@@ -7,13 +7,12 @@
 //
 
 // TODO: 1. See if we can get rid of edge settings in storyboard on navigation bar
-//       2. See if ChameleonShorthandl.swift can be added to the SPM and work.
-//       3. Fix problem with deleting item in TodoList not reseting the colors
-//       4. Check on title in navbar getting color reset - appears not to be working
+//       2. Fix problem with deleting item in TodoList not reseting the colors
+//       3. Check on title in navbar getting color reset - appears not to be working
 
 import UIKit
 import RealmSwift
-import Chameleon
+import ChameleonSwift
 
 class CategoryViewController: SwipeTableViewController {
     

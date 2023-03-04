@@ -154,6 +154,9 @@ class TodoListViewController: SwipeTableViewController {
             } catch {
                 print("Error deleting item, \(error)")
             }
+            DispatchQueue.main.async {
+                self.loadItems()
+            }
         }
     }
 }

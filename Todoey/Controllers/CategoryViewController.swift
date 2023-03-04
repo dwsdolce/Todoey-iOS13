@@ -7,8 +7,7 @@
 //
 
 // TODO: 1. See if we can get rid of edge settings in storyboard on navigation bar
-//       2. Fix problem with deleting item in TodoList not reseting the colors
-//       3. Check on title in navbar getting color reset - appears not to be working
+//       2. Check on title in navbar getting color reset - appears not to be working
 
 import UIKit
 import RealmSwift

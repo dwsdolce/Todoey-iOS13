@@ -80,8 +80,10 @@ class CategoryViewController: SwipeTableViewController {
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
         let alert = UIAlertController(title: "Add New Category", message: "", preferredStyle: .alert)
+
         let action = UIAlertAction(title: "Add Category", style: .default) { (action) in
             let newCategory = Category()
+           
             newCategory.name = alert.textFields?[0].text ?? "New"
             newCategory.hexBackgroundColor = UIColor.randomFlat().hexValue()
             
@@ -92,7 +94,9 @@ class CategoryViewController: SwipeTableViewController {
         
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "Create new category"
+            alertTextField.autocapitalizationType = .words
         }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         present(alert, animated: true)
     }

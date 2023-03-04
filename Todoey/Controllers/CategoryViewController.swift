@@ -6,9 +6,6 @@
 //  Copyright © 2023 App Brewery. All rights reserved.
 //
 
-// TODO: 1. See if we can get rid of edge settings in storyboard on navigation bar
-//       2. Check on title in navbar getting color reset - appears not to be working
-
 import UIKit
 import RealmSwift
 import ChameleonSwift
@@ -31,11 +28,10 @@ class CategoryViewController: SwipeTableViewController {
             fatalError("Navigation controller does not exist!")
         }
         
-        // TODO: navBar.backgroundColor = UIColor(hexString: "#1D9BF6")
         if let navBarColor = UIColor(hexString: "#1D9BF6") {
-            if let _ = navBar.scrollEdgeAppearance?.backgroundColor {
-                navBar.scrollEdgeAppearance!.backgroundColor = navBarColor
-            }
+            let contrastColor = ContrastColorOf(navBarColor, returnFlat: true)
+            navBar.scrollEdgeAppearance?.backgroundColor = navBarColor
+            navBar.scrollEdgeAppearance?.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : contrastColor]
         }
     }
     
@@ -66,8 +62,9 @@ class CategoryViewController: SwipeTableViewController {
     // MARK: - TableView Delegate Methods
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+       
         performSegue(withIdentifier: "goToItems", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -95,6 +95,8 @@ class CategoryViewController: SwipeTableViewController {
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "Create new category"
             alertTextField.autocapitalizationType = .words
+            alertTextField.spellCheckingType = .yes
+            alertTextField.autocorrectionType = .yes
         }
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         

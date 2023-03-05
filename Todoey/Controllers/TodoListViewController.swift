@@ -126,6 +126,8 @@ class TodoListViewController: SwipeTableViewController {
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "Create new item"
             alertTextField.autocapitalizationType = .sentences
+            alertTextField.spellCheckingType = .yes
+            alertTextField.autocorrectionType = .yes
         }
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
